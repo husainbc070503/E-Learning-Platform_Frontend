@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin: 7.5rem 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.Grid.home {
+  position: relative;
+}
+
+.home-img {
+  width: 300px;
+  height: auto !important;
+  position: absolute;
+}
+
+.home-img:first-child {
+  top: 10px;
+  left: 30px;
+  animation: animate1 6s linear infinite;
+}
+
+.home-img:last-child {
+  width: 340px;
+  bottom: 10px;
+  right: 10px;
+  animation: animate2 6s linear infinite;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.nav-link.active {
+  color: #161A30;
+}
+
+.nav-link.active .Typography {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.Typography.heading {
+  color: transparent;
+  background: linear-gradient(-225deg, #ff5722, #f44336, #00e676);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textclip 5s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.reg-form {
+  height: 420px;
+  overflow-y: scroll;
+}
+
+.user-profile {
+  width: 400px;
+  position: relative;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.add-course-image {
+  position: relative;
+  height: 400px;
+  margin-bottom: 18px;
+}
+
+.add-course-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.add-course-image label {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.Grid.course {
+  padding: 20px;
+  box-shadow: 0 30px 30px #495c691c;
+  border-radius: 10px;
+}
+
+.Box.lessons-accordion {
+  width: 750px;
+  margin: 12px auto;
+}
+
+.MenuIcon.nav-icon {
+  display: none;
+}
+
+.Box.link-lists .nav-link {
+  display: inline-block;
+}
+
+.dash-icon {
+  margin-right: 8px;
+  color: #111;
+}
+
+.dash-card {
+  transition: all 0.4s;
+}
+
+.dash-card:hover {
+  transform: translateY(-8px);
+}
+
+@media only screen and (max-width: 800px) {
+  .user-profile {
+    padding-right: 20px;
+  }
+
+  .Box.link-lists {
+    width: 200px;
+    position: absolute;
+    height: 100vh;
+    top: 100%;
+    left: -300px;
+    background: #fff;
+    padding: 10% 20px;
+    transition: left 0.4s;
+  }
+
+  .Box.link-lists.open-list {
+    left: 0;
+  }
+
+  .MenuIcon.nav-icon {
+    display: block;
+    color: #fff;
+  }
+
+  .Box.link-lists .nav-link {
+    display: block;
+    color: #2D3250;
+    margin: 15px 0;
+  }
+
+  .Box.link-lists .nav-link .Typography {
+    font-size: 20px;
+  }
+
+  .Box.link-lists .nav-link.active {
+    font-weight: bold;
+  }
+
+  .Button.nav-btn {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .Button.nav-btn .IconButton {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Button.nav-btn .IconButton .Typography {
+    width: 80%;
+    margin-top: 8px;
+    font-size: 18px;
+    color: #2D3250 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
