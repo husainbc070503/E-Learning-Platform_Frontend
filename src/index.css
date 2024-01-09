@@ -154,6 +154,7 @@ img {
 
 .Box.lessons-accordion {
   width: 750px;
+  max-width: 95%;
   margin: 12px auto;
 }
 

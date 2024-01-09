@@ -42,13 +42,20 @@ const InstructDash = () => {
           </Grid>
         </Grid>
         <Grid container spacing={2} alignItems="center">
-          {myCourses
-            ?.filter((i) => i?.name.toLowerCase().includes(search))
-            ?.map((item, ind) => (
-              <Grid item md={4} xs={12} key={ind}>
-                <CourseCard item={item} role={user?.user?.role} />
-              </Grid>
-            ))}
+          {myCourses?.length > 0 ? (
+            myCourses
+              ?.filter((i) => i?.name.toLowerCase().includes(search))
+              ?.map((item, ind) => (
+                <Grid item md={4} xs={12} key={ind}>
+                  <CourseCard item={item} role={user?.user?.role} />
+                </Grid>
+              ))
+          ) : (
+            <Typography fontSize={20} fontWeight="bold" my={2} px={1}>
+              You have not added any courses. Please add it by visiting Add
+              Course link above.
+            </Typography>
+          )}
         </Grid>
       </Box>
     </Container>

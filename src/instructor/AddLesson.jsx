@@ -92,10 +92,9 @@ const AddLesson = ({ courseId }) => {
           progress: undefined,
           theme: "colored",
         });
-
         setLessonDetails({ ...lessonDetails, content: finalRes.url });
       } else {
-        toast.error("Failed to upload image! Try again later!", {
+        toast.error("Failed to upload video! Try again later!", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
@@ -109,6 +108,7 @@ const AddLesson = ({ courseId }) => {
 
       setLoading(false);
     } catch (error) {
+      console.log(error);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 3000,
@@ -167,7 +167,15 @@ const AddLesson = ({ courseId }) => {
             color="success"
             variant="contained"
             disabled={loading}
-            onClick={() => addLesson(lessonDetails, courseId, setOpen, setLessonDetails, initialState)}
+            onClick={() =>
+              addLesson(
+                lessonDetails,
+                courseId,
+                setOpen,
+                setLessonDetails,
+                initialState
+              )
+            }
           >
             Add
           </Button>
